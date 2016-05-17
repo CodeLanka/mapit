@@ -1,0 +1,59 @@
+{  
+   "data":[  
+      {  
+         "i":0,
+         "type":"company",
+         "latitude":"6.906401",
+         "longitude":"79.854882",
+         "description":"",
+         "name":"99X Technology",
+         "technology_stack":[  
+            "ASP",
+            "JavaScript",
+            "CSS"
+         ],
+         "company_site":"www.99xtechnology.com",
+         "logo":"images/99xt-logo.png",
+         "operational_locations":"",
+         "link":[  
+            {  
+               "name":"Our Company",
+               "link":"http://www.99xtechnology.com/our-company/"
+            },
+            {  
+               "name":"Awards",
+               "link":"http://www.99xtechnology.com/awards"
+            }
+         ],
+         "people":[  
+            {  
+               "name":"Mano Sekaram",
+               "designation":"CEO",
+               "email":"",
+               "tel":"",
+               "social":[  
+                  {  
+                     "name":"facebook",
+                     "link":""
+                  },
+                  {  
+                     "name":"twitter",
+                     "link":""
+                  }
+               ]
+            },
+            {  
+               "name":"Shenika",
+               "designation":"Head HR",
+               "email":"Shenika@99xt.lk",
+               "social":[  
+                  {  
+                     "name":"facebook",
+                     "link":""
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
