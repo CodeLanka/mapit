@@ -1,4 +1,4 @@
-Contributor Guidelines
+# Contributor Guidelines #
 
 * Adding of company emails and pulbic company phone in the public domain is allowed.
 * Adding of private contact number not allowed unless explicit verification and permission from the person.
