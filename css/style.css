@@ -120,3 +120,12 @@ body {
 .detailscontainer{
     border-bottom: 1px solid #e5e5e5;
 }
+
+.peopledetails a{
+    color: #333;
+    display: block;
+}
+
+.peopledetails a:hover{
+    text-decoration: none;
+}

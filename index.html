@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="" ng-app="mapit">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IT Landscape Sri Lanka</title>
-    <!-- Bootstrap CSS -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> -->
-    <!--Main Css-->
-    <link href="css/style.css" rel="stylesheet">
-    <!--Font Css-->
-    <link href="fonts/style.css" rel="stylesheet">
-    <!-- Google Font-->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
-    <script src="//code.jquery.com/jquery.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js"></script>
-    <script src="http://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js">
-    </script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT Landscape Sri Lanka</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> -->
+  <!--Main Css-->
+  <link href="css/style.css" rel="stylesheet">
+  <!--Font Css-->
+  <link href="fonts/style.css" rel="stylesheet">
+  <!-- Google Font-->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+  <script src="https://maps.google.com/maps/api/js"></script>
+  <script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js">
+  </script>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body ng-controller="mainController">
-    <div class="row">
+</head>
+
+<body ng-controller="mainController">
+  <div class="row">
     <div class="col-md-8 maparea" style="">
       <map id="map-canvas" center="6.906401, 79.854882" on-click="addMarker()" zoom="10">
-      <div ng-repeat="map in maps">
-        <marker id="foo-{{map.type}}"
-        data-index="{{map.i}}" on-click="mapinfo( '{{map.i}}')"
-        on-sclick="showInfoWindow(event, 'bar-{{map.type}}')"
-        position="{{map.latitude}},{{map.longitude}}"/>
-      </div>
+        <div ng-repeat="map in maps">
+          <marker id="foo-{{map.type}}" data-index="{{map.i}}" on-click="mapinfo( '{{map.i}}')" on-sclick="showInfoWindow(event, 'bar-{{map.type}}')"
+            position="{{map.latitude}},{{map.longitude}}" />
+        </div>
       </map>
     </div>
-    <div class="col-md-4 companypanel"style="float:right;">
+    <div class="col-md-4 companypanel" style="float:right;">
       <nav class="navbar navbar-default" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -47,7 +47,7 @@
           <a class="navbar-brand" style="color:#fff;" href="/mapit">Map IT</a>
         </div>
       </nav>
-      <div class="panel panel-default"  ng-show="infoVisible">
+      <div class="panel panel-default" ng-show="infoVisible">
         <div class="panel-body">
           <div id="siteNotice"></div>
           <div class="companycontactdetails">
@@ -84,31 +84,33 @@
                 <i class="icon icon-youtube-with-circle youtube"></i>
               </a>
             </div>
-            
+
           </div>
           <div id="bodyContent">
             <div class="detailscontainer">
               <h4>People</h4>
               <div ng-repeat="people in company.people" class="peopledetails">
-                
                 <span class="destination">{{people.designation}}</span>
                 <span class="name">{{people.name}}</span><br />
-                <i class="icon icon-mail"></i> <span>{{people.email}}</span>
-              </div>
-            </div>
-            <div>
-              <h4>Techonlogies</h4>
-              <span ng-repeat="techstack in company.technology_stack"> {{techstack}}
+                <i class="icon icon-mail"></i> <span>{{people.email}}</span><br>
+                <a ng-repeat="social in people.social" href="{{social.link}}"><i class="icon icon-{{social.name}}-with-circle"></i> {{social.link}}</a>
               </div>
             </div>
           </div>
+          <div>
+            <h4>Techonlogies</h4>
+            <span ng-repeat="techstack in company.technology_stack"> {{techstack}}
+          </div>
         </div>
       </div>
-      </div>
-      <!-- jQuery -->
-      <script src="//code.jquery.com/jquery.js"></script>
-      <!-- Bootstrap JavaScript -->
-      <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="app.js"></script>
-    </body>
-  </html>
+    </div>
+  </div>
+  </div>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
